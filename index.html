@@ -5,38 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Our Anniversary 💖</title>
   <style>
+    /* ----- Collage background ----- */
+    .bg-collage {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .bg-collage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center,
+                  rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    }
+    .tiles {
+      position: absolute;
+      inset: -10vh -10vw;
+      display: grid;
+      grid-template-columns: repeat(8, minmax(120px, 1fr));
+      gap: 10px;
+      transform: rotate(-3deg) scale(1.1);
+      opacity: 0.25;
+      filter: blur(1px) grayscale(15%);
+    }
+    @media (max-width: 900px) {
+      .tiles { grid-template-columns: repeat(5, minmax(100px, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .tiles { grid-template-columns: repeat(3, minmax(90px, 1fr)); }
+    }
+    .tiles img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* ----- Content styling ----- */
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background: #ffe6f0;
-      color: #333;
+      text-align: center;
     }
     h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
     h2 {
       font-size: 4em;
-      color: #e60073;
+      color: #ffd6e8;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
     .caption {
       margin-top: 0.5em;
       font-size: 1.2em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
+
+  <!-- Collage background -->
+  <div class="bg-collage" aria-hidden="true">
+    <div class="tiles">
+      <img src="IMG_1444.jpg">
+      <img src="IMG_1848.jpg">
+      <img src="IMG_1944.jpg">
+      <img src="IMG_1973.jpg">
+      <img src="IMG_2038.jpg">
+      <img src="IMG_2039.jpg">
+      <img src="IMG_2259.jpg">
+      <img src="IMG_4554.jpg">
+      <img src="lp_image.jpg">
+      <img src="IMG_0974.jpg">
+      <img src="100_0779.jpg">
+      <img src="IMG_2230.jpg">
+      <img src="image.jpg">
+      <!-- duplicate to fill -->
+      <img src="IMG_1444.jpg">
+      <img src="IMG_1848.jpg">
+      <img src="IMG_1944.jpg">
+      <img src="IMG_1973.jpg">
+      <img src="IMG_2038.jpg">
+      <img src="IMG_2039.jpg">
+      <img src="IMG_2259.jpg">
+      <img src="IMG_4554.jpg">
+      <img src="lp_image.jpg">
+      <img src="IMG_0974.jpg">
+      <img src="100_0779.jpg">
+      <img src="IMG_2230.jpg">
+      <img src="image.jpg">
+    </div>
+  </div>
+
+  <!-- Page content -->
   <h1>Days Since Our Anniversary 💖</h1>
   <h2 id="counter"></h2>
   <div class="caption">Since February 25, 2025</div>
 
   <script>
-    const anniversary = new Date("2025-02-25"); 
+    const anniversary = new Date("2025-02-25");
     const today = new Date();
     const diffTime = today - anniversary;
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
