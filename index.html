@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Our Anniversary 💖</title>
   <style>
-    /* ----- Collage background ----- */
+  
     .bg-collage {
       position: fixed;
       inset: 0;
@@ -16,7 +16,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      /* Almost transparent overlay so photos are bright */
+ 
       background: rgba(0,0,0,0.05);
     }
     .tiles {
@@ -26,8 +26,8 @@
       grid-template-columns: repeat(8, minmax(120px, 1fr));
       gap: 8px;
       transform: rotate(-3deg) scale(1.1);
-      opacity: 1; /* full visibility */
-      filter: none; /* no grayscale or blur */
+      opacity: 1; 
+      filter: none; 
     }
     @media (max-width: 900px) {
       .tiles { grid-template-columns: repeat(5, minmax(100px, 1fr)); }
@@ -44,7 +44,7 @@
       pointer-events: none;
     }
 
-    /* ----- Content styling ----- */
+   
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -75,7 +75,7 @@
 </head>
 <body>
 
-  <!-- Collage background -->
+
   <div class="bg-collage" aria-hidden="true">
     <div class="tiles">
       <img src="IMG_1444.jpg">
@@ -91,7 +91,7 @@
       <img src="100_0779.jpg">
       <img src="IMG_2230.jpg">
       <img src="image.jpg">
-      <!-- duplicate to fill -->
+    
       <img src="IMG_1444.jpg">
       <img src="IMG_1848.jpg">
       <img src="IMG_1944.jpg">
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <!-- Page content -->
+
   <h1>Days Since Our Anniversary 💖</h1>
   <h2 id="counter"></h2>
   <div class="caption">Since February 25, 2025</div>
